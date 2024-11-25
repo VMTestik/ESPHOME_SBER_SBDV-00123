@@ -38,3 +38,5 @@
 Для разборки розетки курим: https://mysku.club/blog/russia-stores/101393.html
 
 Гайд основан на: https://github.com/Brokly/ESPHOME_SBER_SBDV-00115
+
+Сделано в исследовательских целях!
