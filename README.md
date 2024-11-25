@@ -3,7 +3,7 @@
 
 Берем файл прошивки из данного репозитария. Это откомпилированная прошивка, правильно зашифрованная с подмененным загрузчикoм (OpenBK7231M_QIO_SBER_DEL.bin). Она прошьется в модуль сберрозетки, без ошибки контрольной суммы и позволит дальше шить розетку из EspHome-LibreTiny.
 
-Основной инструмент - [https://github.com/openshwprojects/BK7231GUIFlashTool/releases/download/v1.1.0/bk7231flasher_1.1.0b.zip](https://github.com/openshwprojects/BK7231GUIFlashTool/releases/download/v1.3/bk7231flasher_1.3.3.zip) (утилита из проекта https://github.com/openshwprojects/BK7231GUIFlashTool )
+Основной инструмент - https://github.com/openshwprojects/BK7231GUIFlashTool/releases/download/v1.3/bk7231flasher_1.3.3.zip (утилита из проекта https://github.com/openshwprojects/BK7231GUIFlashTool )
 
 Качаем, разархивируем, запускаем.
 
