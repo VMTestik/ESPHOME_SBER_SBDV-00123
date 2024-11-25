@@ -36,4 +36,5 @@
 Хочу отметить, что тут я не описываю разборку розетки, подпайку к контактам и тд.
 
 Для разборки розетки курим: https://mysku.club/blog/russia-stores/101393.html
+
 Гайд основан на: https://github.com/Brokly/ESPHOME_SBER_SBDV-00115
