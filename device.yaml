@@ -1,0 +1,92 @@
+# ESPHome 2023.9.0-dev
+# docker pull ghcr.io/libretiny-eu/libretiny-esphome-docker:2023.9.0-dev
+esphome:
+  name: "sber_sbdv123"
+  friendly_name: "sber_sbdv123"
+  platformio_options:
+    board_build.bkcrypt_coeffs: d7f14fd7dcefdba37fa7df5fd3ffafdf
+    board_build.bkota.key: 5AC0EE0B2379005E3F52CCA49B2D741D
+    board_build.bkota.iv: 8BCC2EF2EDEC53C7
+    board_flash.download: "0x132000+0xCC000"
+    board_flash.net: "0x1D0000+0x200"
+    board_flash.userdata: "0x1D4000+0x1000"
+
+bk72xx:
+  board: cbu
+  framework:
+    version: dev
+
+substitutions:
+  plug_name: sber_sbdv123
+
+logger:
+
+captive_portal:
+
+web_server:
+  local: True
+  port: 80
+
+ota:
+  password: "change_me"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  ap:
+    ssid: "${plug_name}_Fall"
+    password: "change_me"
+    ap_timeout: 120s
+
+uart:
+  tx_pin: P11
+  rx_pin: P10
+  baud_rate: 4800
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: 9
+      inverted: false
+    name: "${plug_name}_button"
+    on_press:
+      - switch.toggle: relay
+
+switch:
+  - platform: gpio
+    name: "${plug_name}_LED"
+    pin: 6
+    inverted: true
+    restore_mode: ALWAYS_ON
+    id: led
+
+  - platform: gpio
+    name: "${plug_name}_Relay"
+    pin: 26
+    restore_mode: RESTORE_DEFAULT_OFF
+    id: relay
+    on_turn_on:
+      - switch.turn_off: led
+    on_turn_off:
+      - switch.turn_on: led
+
+sensor:
+  - platform: bl0942
+    voltage:
+      name: 'BL0942 Voltage'
+      unit_of_measurement: V
+    current:
+      name: 'BL0942 Current'
+      unit_of_measurement: A
+    power:
+      name: 'BL0942 Power'
+      unit_of_measurement: W
+    energy:
+      name: 'BL0942 Energy'
+      unit_of_measurement: kWh
+    frequency:
+      name: "BL0942 Frequency"
+      unit_of_measurement: Ghz
+      
+  - platform: uptime
+    name: ${plug_name}_Uptime
