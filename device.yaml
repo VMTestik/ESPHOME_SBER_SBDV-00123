@@ -30,6 +30,10 @@ web_server:
 ota:
   password: "change_me"
 
+api:
+  encryption:
+    key: "change_me"
+
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
