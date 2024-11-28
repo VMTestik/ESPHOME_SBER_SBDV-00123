@@ -11,7 +11,7 @@
 
 - В списке выбираем порт, который отождествлен с нашим UART.
 
-- Нажимаем кнопочку "Open backups dir" и в открывшееся окно скачиваем прошивку [https://github.com/VMTestik/ESPHOME_SBER_SBDV-00123/OpenBK7231M_QIO_SBER_DEL.bin](https://github.com/VMTestik/ESPHOME_SBER_SBDV-00123/blob/main/OpenBK7231M_QIO_SBER_DEL.bin)
+- Открываем папку с bk7231flasher и в папку firmwares скачиваем прошивку [https://github.com/VMTestik/ESPHOME_SBER_SBDV-00123/OpenBK7231M_QIO_SBER_DEL.bin](https://github.com/VMTestik/ESPHOME_SBER_SBDV-00123/blob/main/OpenBK7231M_QIO_SBER_DEL.bin)
 
 - Устанавливаем галочку "Show Advanced Options".  
 
@@ -27,7 +27,7 @@
 
 - Ждем окончания прошивки.
 
-- Жмакаем кнопку "Restore RF part", со всем соглашаемся (это рандомизация MAC адреса, новая прошивка затрет бывший адрес). (ВОЗМОЖНО НЕ РАБОТАЕТ)
+- Жмакаем кнопку "Restore RF part", со всем соглашаемся (это рандомизация MAC адреса, новая прошивка затрет бывший адрес). 
 
 После этих операций вы можете прошить свою конфигурацию по UART или OTA, естественно, создав конфигурацию с использованием EspHome-LibreTiny. Прошитый модуль создает точку доступа SberFlasher с паролем 11111111. Можно подключиться к этой точке доступа, зайти на 192.168.4.1 и залить прошивку firmware.bin, созданную заранее. 
     
